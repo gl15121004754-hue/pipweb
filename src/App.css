@@ -1,0 +1,200 @@
+/* 全局样式 - 借鉴Notion的黑白风格 */
+body {
+    font-family: 'LXGW WenKai TC', 'sans-serif'; /* 优先使用霞鹜文楷手写体 */
+    background-color: #FFFFFF; /* 白色背景 */
+    color: #1E1E1E; /* 深灰色文字 */
+    line-height: 1.8;
+    margin: 0;
+    padding: 20px;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* 头部介绍区域 */
+.hero {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.hero h1 {
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.hero .subtitle {
+    font-size: 1.2em;
+    color: #505050; /* 浅灰色副标题 */
+    margin-bottom: 30px;
+}
+
+.hero .slogan {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+.hero .more-link {
+    text-decoration: none;
+    color: #1E1E1E;
+    border-bottom: 2px solid #1E1E1E;
+    padding-bottom: 3px;
+    transition: all 0.3s ease;
+}
+
+.hero .more-link:hover {
+    background-color: #f0f0f0;
+}
+
+/* 作品展示区域 */
+.creations-section {
+    text-align: center;
+}
+
+.creations-section h2 {
+    font-size: 2.2em;
+    margin-bottom: 10px;
+}
+
+.creations-section .section-intro {
+    color: #505050;
+    margin-bottom: 50px;
+}
+
+.creations-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* 在手机上单列显示 */
+    gap: 25px;
+}
+
+/* 媒体查询：在大于768px的屏幕上，变为三列 */
+@media (min-width: 768px) {
+    .creations-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.card {
+    background-color: #f9f9f9; /* 极浅的灰色卡片背景 */
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    padding: 25px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.card h3 {
+    font-size: 1.4em;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1em;
+    color: #505050;
+    margin-bottom: 20px;
+}
+
+.card .status {
+    font-size: 0.9em;
+    color: #888;
+    font-style: italic;
+}
+
+/* 页脚 */
+footer {
+    text-align: center;
+    margin-top: 100px;
+    color: #aaa;
+    font-size: 0.9em;
+}
+
+/* 导航栏样式 */
+.navbar {
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #eaeaea;
+    margin-bottom: 40px;
+}
+
+.nav-links a {
+    margin-right: 25px;
+    text-decoration: none;
+    color: #505050;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #1E1E1E;
+    font-weight: bold;
+}
+
+.email-icon {
+    cursor: pointer;
+}
+
+.email-icon svg {
+    stroke: #505050;
+    transition: stroke 0.3s ease;
+}
+
+.email-icon:hover svg {
+    stroke: #1E1E1E;
+}
+
+.email-icon {
+    position: relative; /* 为tooltip定位提供相对容器 */
+}
+
+.email-tooltip {
+    position: absolute;
+    bottom: 100%; /* 出现在图标上方 */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    white-space: nowrap; /* 防止邮箱地址换行 */
+    margin-bottom: 8px; /* 与图标的间距 */
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.email-icon:hover .email-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+.email-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+
