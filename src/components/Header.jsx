@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 function Header() {
   return (
@@ -13,7 +14,7 @@ function Header() {
         还有很多想做的事，希望一直都有想做的事，<br />
         做一个平凡又不普通的人！”
       </p>
-      <a href="/about" className="more-link">More about me ↓</a>
+      <NavLink to="/about" className="more-link">More about me ↓</NavLink>
     </header>
   );
 }

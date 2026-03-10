@@ -113,6 +113,20 @@ body {
     font-style: italic;
 }
 
+/* 卡片链接样式 */
+.creations-grid .card {
+    text-decoration: none;
+    display: block;
+}
+
+.creations-grid .card h3 {
+    color: #000000;
+    font-weight: bold;
+}
+
+.creations-grid .card:hover h3 {
+    text-decoration: none;
+}
 /* 页脚 */
 footer {
     text-align: center;
